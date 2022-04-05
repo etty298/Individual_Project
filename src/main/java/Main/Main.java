@@ -11,9 +11,9 @@ public class Main {
         ApiContextInitializer.init();
         DefaultBotOptions defaultBotOptions = ApiContext.getInstance(DefaultBotOptions.class);
 
-        //defaultBotOptions.setProxyType(DefaultBotOptions.ProxyType.SOCKS5);
-        //defaultBotOptions.setProxyHost("localhost");
-        //defaultBotOptions.setProxyPort(9150);
+        defaultBotOptions.setProxyType(DefaultBotOptions.ProxyType.SOCKS5);
+        defaultBotOptions.setProxyHost("localhost");
+        defaultBotOptions.setProxyPort(9150);
 
         Project project = new Project(defaultBotOptions);
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();

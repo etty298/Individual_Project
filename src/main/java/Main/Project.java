@@ -15,8 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project extends TelegramLongPollingBot {
-    private static final String TOKEN = "2119234226:AAGVgb47K_S4OANvpI3rZPpF0LFoVCtosyw";
+    private static final String TOKEN = "5221396288:AAHpNNFjLkmtv_jHFpLR7Z9RmZEu3PbsBck";
     private static final String USERNAME = "Project_366_Bot";
+    public String state;
 
     public Project(DefaultBotOptions options) {
         super(options);
@@ -31,98 +32,198 @@ public class Project extends TelegramLongPollingBot {
         return TOKEN;
     }
 
+
     @Override
     public void onUpdateReceived(Update update) {
-        if (update.getMessage() != null && update.getMessage().hasText()) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
             switch (update.getMessage().getText()) {
                 case "/start":
                     sendMessage(update.getMessage(), "Вы можете найти подходящуюю для вас тему проекта");
                     break;
                 case "Выбрать предмет":
-                sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
-                break;
+                    sendTypeMessage(update.getMessage(), "Выберите тип проекта");
+                    break;
+                case "Теоретический":
+                    state = "Теоретический";
+                    sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
+                    break;
+                case "Практический":
+                    state = "Практический";
+                    sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
+                    break;
                 case "Информатика":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по информатике:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по информатике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по информатике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
+
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Математика":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по математике:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по математике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по математике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
+
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "История":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по истории:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по истории:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по истории:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
+
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "География":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по географии:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по географии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по географии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+
+                    }
+
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Биология":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по биологии:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по биологии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по биологии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Русский язык":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по русскому языку:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по русскому языку:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по русскому языку:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Литература":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по литературе:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по литературе:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по литературе:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Иностранный язык":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по иностранному языку:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по иностранному языку:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по иностранному языку:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
+
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Физика":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по физике:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по физике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по физике:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Обществознание":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по оюществознанию:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по оюществознанию:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по оюществознанию:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Химия":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по химии:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по химии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по химии:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Физическая культура":
-                    sendLessonMessage(update.getMessage(), "Возможные варианты для проектов по физической культуре:\n" +
-                            "-\n" +
-                            "-\n" +
-                            "-\n");
+                    if (state.equals("Теоретический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по физической культуре:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    } else if (state.equals("Практический")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для практических проектов по физической культуре:\n" +
+                                "-\n" +
+                                "-\n" +
+                                "-\n");
+                    }
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 default:
@@ -153,6 +254,18 @@ public class Project extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }
+    public void sendTypeMessage (Message message, String text) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.enableMarkdown(true);
+        sendMessage.setChatId(message.getChatId().toString());
+        sendMessage.setText(text);
+        try {
+            setTypeButtons(sendMessage);
+            execute(sendMessage);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
     public void setButtons(SendMessage sendMessage) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
@@ -163,6 +276,21 @@ public class Project extends TelegramLongPollingBot {
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
         keyboardFirstRow.add(new KeyboardButton("Выбрать предмет"));
+        keyboardRowList.add(keyboardFirstRow);
+        replyKeyboardMarkup.setKeyboard(keyboardRowList);
+
+    }
+    public void setTypeButtons(SendMessage sendMessage) {
+        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        sendMessage.setReplyMarkup(replyKeyboardMarkup);
+        replyKeyboardMarkup.setSelective(true);
+        replyKeyboardMarkup.setResizeKeyboard(true);
+        replyKeyboardMarkup.setOneTimeKeyboard(false);
+
+        List<KeyboardRow> keyboardRowList = new ArrayList<>();
+        KeyboardRow keyboardFirstRow = new KeyboardRow();
+        keyboardFirstRow.add(new KeyboardButton("Теоретический"));
+        keyboardFirstRow.add(new KeyboardButton("Практический"));
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
 
