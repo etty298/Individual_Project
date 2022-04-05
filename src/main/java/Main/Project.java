@@ -19,9 +19,6 @@ public class Project extends TelegramLongPollingBot {
     private static final String USERNAME = "Project_366_Bot";
     public String state;
 
-    public Project(DefaultBotOptions options) {
-        super(options);
-    }
     @Override
     public String getBotUsername() {
         return USERNAME;
