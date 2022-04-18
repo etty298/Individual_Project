@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project extends TelegramLongPollingBot {
-    private static final String TOKEN = "5021269353:AAEZHqSsfUJ0wMwlZ_hHrrAU4Tjv0tZvhXU";
+    private static final String TOKEN = "5352710949:AAElM8z9Upq4EyMAjCkAVKkqF3tatmKRvDo";
     private static final String USERNAME = "Project_366_Bot";
     public String state;
 
