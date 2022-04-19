@@ -40,8 +40,8 @@ public class Project extends TelegramLongPollingBot {
                 case "Выбрать тип проекта":
                     sendTypeMessage(update.getMessage(), "Выберите тип проекта");
                     break;
-                case "Теоретический":
-                    state = "Теоретический";
+                case "Исследовательский":
+                    state = "Исследовательский";
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Практический":
@@ -49,8 +49,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Информатика":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по информатике:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по информатике:\n" +
                                 "Киберпреступность и методы борьбы с ней\n" +
                                 "Польза и вред компьютерных игр\n" +
                                 "Эволюция операционной системы\n");
@@ -64,8 +64,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Математика":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по математике:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по математике:\n" +
                                 "Экология глазами математики\n" +
                                 "Параболы в арочных мостах\n" +
                                 "Вероятность сдачи ОГЭ\n");
@@ -79,8 +79,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "История":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по истории:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по истории:\n" +
                                 "Духовная жизнь в 20-е годы 20 века\n" +
                                 "Геополитическое положение и внешняя политика России\n" +
                                 "Политическая система СССР в 30-е годы 20 века\n");
@@ -94,8 +94,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "География":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по географии:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по географии:\n" +
                                 "Антропогенные катастрофы в природе\n" +
                                 "Есть ли аномалии тяжелых металлов вдоль автомобильных магистра лей нашего города? Их влияние на наше здоровье\n" +
                                 "Древние корни молодого города\n");
@@ -111,8 +111,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Биология":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по биологии:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по биологии:\n" +
                                 "Акустический шум и его воздействие на человека\n" +
                                 "Биологический механизм запахов\n" +
                                 "Паразитирующие жгутиконосцы\n");
@@ -125,8 +125,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Русский язык":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по русскому языку:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по русскому языку:\n" +
                                 "Источник пополнения словарного запаса русского языка\n" +
                                 "Источники крылатых слов и выражений\n" +
                                 "Штампы и стереотипы в современной публичной речи\n");
@@ -139,8 +139,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Литература":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по литературе:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по литературе:\n" +
                                 "Анализ исследование одного стихотворения\n" +
                                 "Влияние творчества Дж. Байрона на русскую классическую литературу\n" +
                                 "Влияние нецензурной и обсценной лексики на человека\n");
@@ -153,8 +153,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Иностранный язык":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по иностранному языку:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по иностранному языку:\n" +
                                 "Глобализация английского языка и его влияние на русский язык\n" +
                                 "Исторические связи России и Великобритании\n" +
                                 "Начальная школа в Британии\n");
@@ -168,8 +168,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Физика":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по физике:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по физике:\n" +
                                 "Влияние температуры окружающей среды на изменение снежных узоров на оконном стекле\n" +
                                 "Влияние радиоактивности на окружающую среду\n" +
                                 "Влияние излучения, исходящего от сотового телефона, на организм человека\n");
@@ -182,8 +182,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Обществознание":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по оюществознанию:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по оюществознанию:\n" +
                                 "История появления Конституции РФ\n" +
                                 "Виды наций и межнациональные взаимоотношения\n" +
                                 "Значение технического прогресса в жизни общества\n");
@@ -196,8 +196,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Химия":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по химии:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по химии:\n" +
                                 "Металлы – материал для создания шедевров мирового искусства\n" +
                                 "Кислотные осадки: их природа и последствия\n" +
                                 "География химических названий\n");
@@ -210,8 +210,8 @@ public class Project extends TelegramLongPollingBot {
                     sendLessonMessage(update.getMessage(), "Выберите подходящий предмет из списка");
                     break;
                 case "Физическая культура":
-                    if (state.equals("Теоретический")) {
-                        sendLessonMessage(update.getMessage(), "Возможные варианты для теоретических проектов по физической культуре:\n" +
+                    if (state.equals("Исследовательский")) {
+                        sendLessonMessage(update.getMessage(), "Возможные варианты для исследовательских проектов по физической культуре:\n" +
                                 "Значение ведения самоконтроля при занятиях физическими упражнениями\n" +
                                 "Мир спорта моими глазами\n" +
                                 "Развитие физических возможностей путем самостоятельной работы\n");
@@ -286,7 +286,7 @@ public class Project extends TelegramLongPollingBot {
 
         List<KeyboardRow> keyboardRowList = new ArrayList<>();
         KeyboardRow keyboardFirstRow = new KeyboardRow();
-        keyboardFirstRow.add(new KeyboardButton("Теоретический"));
+        keyboardFirstRow.add(new KeyboardButton("Исследовательский"));
         keyboardFirstRow.add(new KeyboardButton("Практический"));
         keyboardRowList.add(keyboardFirstRow);
         replyKeyboardMarkup.setKeyboard(keyboardRowList);
