@@ -15,8 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project extends TelegramLongPollingBot {
-    private static final String TOKEN = "5352710949:AAElM8z9Upq4EyMAjCkAVKkqF3tatmKRvDo";
-    private static final String USERNAME = "Project_366_Bot";
+    private static final String TOKEN = "TOKEN";
+    private static final String USERNAME = "USERNAME";
     public String state;
 
     @Override
